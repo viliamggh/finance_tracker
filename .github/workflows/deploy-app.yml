@@ -25,11 +25,13 @@ jobs:
         - name: Check out Repository
           uses: actions/checkout@v3
         
+        ## TODO: load these to secrets (manual step)
         - name: Az CLI login
           uses: azure/login@v1.4.6
-        #   with:
-        #     creds: '{"clientId":"${{ secrets.ARM_CLIENT_ID }}","clientSecret":"${{ secrets.ARM_CLIENT_SECRET }}","subscriptionId":"${{ secrets.ARM_SUBSCRIPTION_ID_PROD }}","tenantId":"${{ secrets.ARM_TENANT_ID }}"}'
-
+          with:
+            client-id: ${{ secrets.AZURE_CLIENT_ID }}
+            tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+            subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
    
         # - name: Load environment from YAML configs
         #   uses: doughepi/yaml-env-action@v1.0.0

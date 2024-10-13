@@ -1,2 +1,8 @@
 ignored/*
 .env
+
+.terraform.tfstate.*
+.terra
+*.zip
+.terraform/
+.vscode/
